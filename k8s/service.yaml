@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: lex-orion
+  labels:
+    app: lex-orion
+
+spec:
+  type: ClusterIP
+
+  selector:
+    app: lex-orion
+
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8501
